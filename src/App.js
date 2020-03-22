@@ -8,7 +8,7 @@ import MovieDetail from './MovieDetail'
 
 const App = () => (
   <Router>
-    <section className="app">
+    <section className="App">
       <header className="App-header">
         <Link to="/">
           <img src={logo} className="App-logo" alt="logo" />
