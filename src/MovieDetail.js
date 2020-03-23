@@ -59,7 +59,7 @@ const MovieWrapper = styled.section`
 `
 
 const MovieInfo = styled.section`
-  background: #fff;
+  background: #111;
   text-align: left;
   padding: 2rem 10%;
   display: flex;

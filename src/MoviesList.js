@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Movie from './Movie'
+import Filter from './Filter'
 
 class MoviesList extends Component {
   state = {
@@ -10,7 +11,7 @@ class MoviesList extends Component {
   async componentDidMount() {
     try {
       const result = await fetch(
-        'https://api.themoviedb.org/3/discover/movie?api_key=88859848d50c55f203e248f5a006929e&language=en-US&year=2013&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
+        'https://api.themoviedb.org/3/discover/movie?api_key=88859848d50c55f203e248f5a006929e&language=en-US&primary_release_year=1989&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
       )
       const movies = await result.json()
 
@@ -35,7 +36,7 @@ class MoviesList extends Component {
 
 export default MoviesList
 
-const MovieGrid = styled.section`
+export const MovieGrid = styled.section`
   display: grid;
   padding: 1rem;
   grid-template-columns: repeat(4, 1fr);
