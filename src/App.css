@@ -33,6 +33,7 @@ h1 {
 
 label {
   color: #61dafb;
+  padding: 0.15rem;
 }
 
 p,
@@ -44,19 +45,16 @@ p {
   line-height: 1.3rem;
 }
 
-input[type='text'] {
+input[type='search'] {
   margin-top: 0.5rem;
   border-radius: 0 1rem;
   border-bottom: 0.1rem solid #61dafb;
   padding: 0.15rem;
 }
 
-input[type="text"]:focus {
+input[type='search']:focus {
   outline: none;
-
 }
-
-input[type="text"]:hover {}
 
 .App-link {
   color: #61dafb;

@@ -14,6 +14,12 @@
 //     })
 //   }
 
+//   onSomethingElse(e) {
+//     this.setState({
+//       some: e.target.value,
+//     })
+//   }
+
 //   render() {
 //     let filteredMovies = this.props.movies.filter(movie => {
 //       return (
@@ -25,17 +31,12 @@
 //       <>
 //         <label htmlFor="search">Search</label>
 //         <input
-//           type="text"
+//           type="search"
 //           onChange={this.onFilterSearch}
 //           name="search"
 //           value={this.state.search}
 //           placeholder="Search for a movie..."
 //         />
-//         <MovieGrid>
-//           {filteredMovies.map(movie => (
-//             <Movie key={movie.id} movie={movie} />
-//           ))}
-//         </MovieGrid>
 //       </>
 //     )
 //   }

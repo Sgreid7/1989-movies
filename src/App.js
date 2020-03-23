@@ -5,7 +5,6 @@ import './App.css'
 
 import MoviesList from './MoviesList'
 import MovieDetail from './MovieDetail'
-import Filter from './Filter'
 
 const App = () => (
   <Router>
@@ -15,7 +14,6 @@ const App = () => (
           <img src={logo} className="App-logo" alt="logo" />
         </Link>
         <h1>Best Movies of 1989</h1>
-        {/* <Filter /> */}
       </header>
       <Switch>
         <Route exact path="/" component={MoviesList} />

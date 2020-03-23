@@ -1,11 +1,23 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Movie from './Movie'
-import Filter from './Filter'
+import InputSection from './InputSection'
 
 class MoviesList extends Component {
   state = {
     movies: [],
+    search: '',
+  }
+
+  onFilterSearch = e => {
+    this.setState({
+      movies: this.state.movies.filter(
+        movie =>
+          movie.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !==
+          -1
+      ),
+      search: e.target.value,
+    })
   }
 
   async componentDidMount() {
@@ -25,11 +37,20 @@ class MoviesList extends Component {
 
   render() {
     return (
-      <MovieGrid>
-        {this.state.movies.map(movie => (
-          <Movie key={movie.id} movie={movie} />
-        ))}
-      </MovieGrid>
+      <>
+        <InputSection
+          type="search"
+          onChange={this.onFilterSearch}
+          name="Search"
+          value={this.state.search}
+          placeholder="Search for a movie..."
+        />
+        <MovieGrid>
+          {this.state.movies.map(movie => (
+            <Movie key={movie.id} movie={movie} />
+          ))}
+        </MovieGrid>
+      </>
     )
   }
 }

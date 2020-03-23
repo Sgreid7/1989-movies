@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Overdrive from 'react-overdrive'
 import { MoviePoster } from './Movie'
+import moment from 'moment'
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154'
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280'
@@ -40,7 +41,7 @@ class MovieDetail extends Component {
           </Overdrive>
           <section>
             <h1>{movie.title}</h1>
-            <h3>{movie.release_date}</h3>
+            <h3>{moment(movie.release_date).format('MMM Do YY')}</h3>;
             <p>{movie.overview}</p>
           </section>
         </MovieInfo>
