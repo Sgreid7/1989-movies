@@ -20,6 +20,16 @@ export default InputSection
 
 const Section = styled.section`
   display: flex;
+  padding: 1rem;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center; */
+  > label {
+    margin: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  input {
+    width: 20%;
+  }
 `

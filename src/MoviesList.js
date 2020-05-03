@@ -7,15 +7,11 @@ class MoviesList extends Component {
   state = {
     movies: [],
     search: '',
+    year: 1989,
   }
 
   onFilterSearch = e => {
     this.setState({
-      movies: this.state.movies.filter(
-        movie =>
-          movie.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !==
-          -1
-      ),
       search: e.target.value,
     })
   }
@@ -23,7 +19,7 @@ class MoviesList extends Component {
   async componentDidMount() {
     try {
       const result = await fetch(
-        'https://api.themoviedb.org/3/discover/movie?api_key=88859848d50c55f203e248f5a006929e&language=en-US&primary_release_year=1989&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
+        `https://api.themoviedb.org/3/discover/movie?api_key=88859848d50c55f203e248f5a006929e&language=en-US&primary_release_year=${this.state.year}&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
       )
       const movies = await result.json()
 
@@ -41,14 +37,21 @@ class MoviesList extends Component {
         <InputSection
           type="search"
           onChange={this.onFilterSearch}
-          name="Search"
+          name="Find movie"
           value={this.state.search}
           placeholder="Search for a movie..."
         />
+
         <MovieGrid>
-          {this.state.movies.map(movie => (
-            <Movie key={movie.id} movie={movie} />
-          ))}
+          {this.state.movies
+            .filter(movie => {
+              return movie.title
+                .toLowerCase()
+                .includes(this.state.search.toLowerCase())
+            })
+            .map(movie => (
+              <Movie key={movie.id} movie={movie} />
+            ))}
         </MovieGrid>
       </>
     )
