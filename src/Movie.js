@@ -27,4 +27,9 @@ Movie.propTypes = {
 
 export const MoviePoster = styled.img`
   box-shadow: 0 0 2rem #000;
+  transition: 0.3s ease;
+
+  :hover {
+    transform: translateY(-0.3rem);
+  }
 `

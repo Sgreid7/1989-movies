@@ -64,5 +64,5 @@ export const MovieGrid = styled.section`
   display: grid;
   padding: 1rem;
   grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 1rem;
+  grid-row-gap: 2rem;
 `
