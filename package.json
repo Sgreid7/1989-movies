@@ -28,6 +28,7 @@
     "useTabs": false
   },
   "devDependencies": {
+    "npm-force-resolutions": "0.0.3",
     "prettier": "^1.19.1",
     "stylelint": "^13.2.1",
     "stylelint-config-standard": "^20.0.0"

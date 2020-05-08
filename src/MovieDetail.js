@@ -41,7 +41,7 @@ class MovieDetail extends Component {
           </Overdrive>
           <section>
             <h1>{movie.title}</h1>
-            <h3>{moment(movie.release_date).format('MMM Do YY')}</h3>;
+            <h3>{moment(movie.release_date).format('MMMM Do, YYYY')}</h3>;
             <p>{movie.overview}</p>
           </section>
         </MovieInfo>

@@ -11,6 +11,7 @@ export const InputSection = ({ type, onChange, name, value, placeholder }) => {
         name={name}
         value={value}
         placeholder={placeholder}
+        autoComplete="off"
       />
     </Section>
   )
@@ -31,5 +32,6 @@ const Section = styled.section`
 
   input {
     width: 20%;
+    padding: 0.5rem;
   }
 `
