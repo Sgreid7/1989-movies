@@ -42,7 +42,7 @@
     "react-moment": "^0.9.7",
     "react-overdrive": "^0.0.10",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.4.0",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.0.1"
   },
   "homepage": "https://1989-movies-sam.netlify.com"
